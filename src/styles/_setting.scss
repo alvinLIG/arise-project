@@ -1,0 +1,33 @@
+//antialiased,subpixel-antialiased,none
+$font-smoothing: antialiased;
+
+//auto,optimizeSpeed,optimizeLegibility,geometricPrecision
+$text-rendering: auto;
+
+$base-font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$base-font-size: 15px;
+$base-font-color: #322e2e;
+$base-background-color: #fff;
+
+//path
+$path-image: "../images/";
+$path-font: "../lib/fonts/";
+
+//$color-primary
+//$color-accent
+$color-white: #fff;
+$color-black: #000;
+
+$site-wrapper: 1200px;
+$breakpoint-large: 1279px;
+$breakpoint-medium: 1170px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop-min: 768px;
+$breakpoint-mobile: 767px;
+$breakpoint-mobile-md: 500px;
+$breakpoint-mobile-sm: 374px;
+
+$base-duration: 0.3s;
+$base-animation: ease;
+$z-max: 10;

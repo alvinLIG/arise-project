@@ -1,0 +1,57 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true,
+    "jest": true
+  },
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "semi": [1, "never"],
+    "react/prop-types": 0,
+    "react/jsx-uses-vars": [2],
+    "react/jsx-filename-extension": 0,
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["__NEXT_REDUX_STORE__"]
+      }
+    ],
+    "react/no-danger": 0,
+    "no-console": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "jest.setup.js",
+          "src/components/**" 
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "./src/components"],
+          ["@redux", "./src/redux"],
+          ["@utils", "./src/utils"],
+          ["@wiki-contents", "./src/static/wiki-contents"],
+          ["@containers", "./src/containers"],
+          ["@assets", "./src/assets"],
+          ["@session", "./src/session"],
+          ["@service", "./src/service"]
+        ]
+      }
+    }
+  }
+}
