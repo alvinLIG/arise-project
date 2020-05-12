@@ -2,6 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -43,6 +44,7 @@ module.exports = (env, argv) => {
               loader: MiniCssExtractPlugin.loader,
               options: {
                 hmr: process.env.NODE_ENV === 'development',
+                sourceMap: true
               },
             },
             { 
@@ -63,7 +65,12 @@ module.exports = (env, argv) => {
                 ]
               }
             },
-            { loader: 'sass-loader' },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            }
           ],
         },
         {
@@ -73,14 +80,19 @@ module.exports = (env, argv) => {
       ]
     },
     plugins: [
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: devMode ? '[name].css' : '[name].[hash].css',
+        chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      }),
       new HtmlWebpackPlugin({
         template: __dirname + '/src/index.html',
         filename: 'index.html',
         inject: 'body'
       })
     ],
-    devtool: isProduction ? 'source-map' :'eval-cheap-source-map',
+    devtool: isProduction ? 'source-map' :'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'dist')
     }
