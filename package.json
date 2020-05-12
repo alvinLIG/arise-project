@@ -18,7 +18,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode development",
+    "production": "webpack --mode production"
   },
   "license": "MIT",
   "browserslist": "> 1%,last 2 versions",
@@ -41,6 +42,7 @@
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.25.3",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
