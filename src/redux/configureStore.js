@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux'
-import testReducer from '../reducers/test'
+import testReducer from '@redux/reducers/test'
 
 export default () => {
   const store = createStore(
