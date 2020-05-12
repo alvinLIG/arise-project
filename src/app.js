@@ -1,7 +1,17 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import DashboardPage from '@pages/DashboardPage'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import configureStore from '@store/configureStore'
+import AppRouters from '@routers/AppRouters'
 
-import './styles/styles.scss';
+import './styles/styles.scss'
 
-ReactDOM.render(<DashboardPage />, document.querySelector("#root"))
+const store = configureStore()
+
+const jsx = (
+  <Provider store={store}>
+    <AppRouters />
+  </Provider>
+)
+
+ReactDOM.render(jsx, document.querySelector("#root"))

@@ -14,6 +14,10 @@ module.exports = {
     alias: {
       '@pages': path.join(__dirname, './src/pages'),
       '@components': path.join(__dirname, './src/components'),
+      '@routers': path.join(__dirname, './src/routers'),
+      '@store': path.join(__dirname, './src/store'),
+      '@reducers': path.join(__dirname, './src/reducers'),
+      '@actions': path.join(__dirname, './src/actions'),
       '@redux': path.join(__dirname, './src/redux'),
       '@service': path.join(__dirname, './src/service'),
       '@session': path.join(__dirname, './src/session'),
